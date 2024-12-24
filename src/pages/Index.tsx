@@ -1,12 +1,24 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from "react";
+import SearchBar from "@/components/SearchBar";
+import QAList from "@/components/QAList";
 
 const Index = () => {
+  const [searchQuery, setSearchQuery] = useState("");
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
+    <div className="space-y-8">
+      <div className="text-center space-y-4">
+        <h2 className="text-3xl font-bold text-medical-700">
+          Find Answers to Your Bariatric Surgery Questions
+        </h2>
+        <p className="text-gray-600 max-w-2xl mx-auto">
+          Get reliable information about bariatric surgery, its procedures, and what to expect. Search our comprehensive database of questions and answers.
+        </p>
       </div>
+      
+      <SearchBar onSearch={setSearchQuery} />
+      
+      <QAList searchQuery={searchQuery} />
     </div>
   );
 };
