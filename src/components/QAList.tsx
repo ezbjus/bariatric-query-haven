@@ -9,7 +9,7 @@ export interface QA {
   answer: string;
 }
 
-// Updated Q&A data with new structure
+// You can replace these sample Q&As with your own
 const sampleQAs: QA[] = [
   {
     id: 1,
