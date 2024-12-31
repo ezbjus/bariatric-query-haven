@@ -6,7 +6,7 @@ import { Helmet } from "react-helmet";
 const Index = () => {
   const [searchQuery, setSearchQuery] = useState("");
 
-  // Create FAQ schema items from the QA list
+  // Enhanced FAQ schema items
   const faqSchemaItems = [
     {
       "@type": "Question",
@@ -23,6 +23,30 @@ const Index = () => {
         "@type": "Answer",
         "text": "Generally, bariatric surgery is recommended for people with a BMI of 40 or higher, or a BMI of 35-39.9 with serious weight-related health problems."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the different types of bariatric surgery?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Common types include gastric bypass, sleeve gastrectomy, adjustable gastric band, and biliopancreatic diversion with duodenal switch (BPD/DS)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the risks of bariatric surgery?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Risks include infection, blood clots, bleeding, adverse reactions to anesthesia, and long-term vitamin and mineral deficiencies."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long is the recovery period after bariatric surgery?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Recovery time varies by procedure but typically ranges from 3-6 weeks. Full recovery may take several months."
+      }
     }
   ];
 
@@ -34,7 +58,11 @@ const Index = () => {
         "@id": "/#organization",
         "name": "Bariatric Surgery Q&A",
         "url": "/",
-        "description": "Expert answers to your bariatric surgery questions"
+        "description": "Expert answers to your bariatric surgery questions",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "/og-image.png"
+        }
       },
       {
         "@type": "WebSite",
@@ -43,6 +71,11 @@ const Index = () => {
         "name": "Bariatric Surgery Q&A",
         "publisher": {
           "@id": "/#organization"
+        },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "/?search={search_term_string}",
+          "query-input": "required name=search_term_string"
         }
       },
       {
@@ -56,12 +89,43 @@ const Index = () => {
         "about": {
           "@id": "/#organization"
         },
-        "description": "Find comprehensive answers to your bariatric surgery questions. Expert information about procedures, recovery, lifestyle changes, and post-surgery care."
+        "description": "Find comprehensive answers to your bariatric surgery questions. Expert information about procedures, recovery, lifestyle changes, and post-surgery care.",
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "item": {
+                "@id": "/",
+                "name": "Home"
+              }
+            }
+          ]
+        }
       },
       {
         "@type": "FAQPage",
         "@id": "/#faq",
         "mainEntity": faqSchemaItems
+      },
+      {
+        "@type": "MedicalWebPage",
+        "@id": "/#medicalwebpage",
+        "about": {
+          "@type": "MedicalProcedure",
+          "name": "Bariatric Surgery",
+          "description": "Surgical procedures performed on the stomach or intestines to induce weight loss",
+          "relevantSpecialty": {
+            "@type": "MedicalSpecialty",
+            "name": "Bariatric Surgery"
+          }
+        },
+        "audience": {
+          "@type": "MedicalAudience",
+          "audienceType": "Patients considering weight loss surgery"
+        },
+        "lastReviewed": "2024-03-20"
       }
     ]
   };
