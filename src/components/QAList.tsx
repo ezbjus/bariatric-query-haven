@@ -16,8 +16,8 @@ interface QAListProps {
 
 const QAList = ({ searchQuery = "" }: QAListProps) => {
   const filteredQAs = qaData.filter((qa) =>
-    qa.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    qa.question.toLowerCase().includes(searchQuery.toLowerCase())
+    (qa.title?.toLowerCase().includes(searchQuery.toLowerCase()) || false) ||
+    (qa.question?.toLowerCase().includes(searchQuery.toLowerCase()) || false)
   );
 
   return (
