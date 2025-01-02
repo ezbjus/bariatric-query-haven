@@ -144,9 +144,15 @@ const Index = () => {
       </Helmet>
       <main role="main" className="space-y-8">
         <section className="text-center space-y-4">
-          <h1 className="text-3xl font-bold text-medical-700">
-            Find Answers to Your Bariatric Surgery Questions
+          <h1 className="text-4xl font-bold text-medical-700 mb-4">
+            Bariatric Bypass Surgery Recovery
           </h1>
+          <h2 className="text-2xl font-semibold text-medical-600 mb-6">
+            Post Bariatric Surgery Vitamins
+          </h2>
+          <h3 className="text-3xl font-bold text-medical-700">
+            Find Answers to Your Bariatric Surgery Questions
+          </h3>
           <p className="text-gray-600 max-w-2xl mx-auto">
             Get reliable information about bariatric surgery, its procedures, and what to expect. Search our comprehensive database of questions and answers.
           </p>
